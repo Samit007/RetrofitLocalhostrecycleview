@@ -43,7 +43,7 @@ public class SearchEmployee extends AppCompatActivity {
     private void loadData() {
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:4000")
+                .baseUrl("http://10.0.2.2:4000/api")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         EmployeeAPI employeeAPI = retrofit.create(EmployeeAPI.class);
@@ -54,7 +54,9 @@ public class SearchEmployee extends AppCompatActivity {
             @Override
             public void onResponse(Call<Employee> call, Response<Employee> response) {
                 Toast.makeText(SearchEmployee.this, response.body().toString(), Toast.LENGTH_SHORT).show();
+
                 String content = "";
+
                 content += "ID : " + response.body().getId() + "\n";
                 content += "FName : " + response.body().getFirstname() + "\n";
                 content += "LName : " + response.body().getLastname() + "\n";

@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SearchAllActivity">
-    <include layout="@layout/content_dashboard_activity" />
+    <!--<include layout="@layout/content_dashboard_activity" />-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvdata"/>
 
 
 </android.support.design.widget.CoordinatorLayout>
